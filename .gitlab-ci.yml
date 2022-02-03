@@ -26,12 +26,11 @@ htmlhint:
 
 
 lintcss:
-    image: debian:bullseye
     stage: test
     tags:
         - shell
     script:
-        - npm install csslint-cli -g
+        - npm install csslint-cli
         - csslint-cli *.css > css_report.txt
     artifacts:
         paths:
