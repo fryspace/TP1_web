@@ -24,6 +24,7 @@ htmlhint:
 
 
 lintcss:
+    image: node:12
     stage: test
     tags:
         - shell
