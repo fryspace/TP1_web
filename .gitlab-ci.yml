@@ -15,18 +15,18 @@ pages:
             - public
 
 htmlhint:
-    image: node:12
     stage: test
     tags:
-        - docker
+        - shell
     script:
         - npx htmlhint *.html
 
 
 lintcss:
+    image: node:12
     stage: test
     tags:
-        - public
+        - docker
     script:
         - npm install csslint-cli
         - npx csslint-cli *.css > css_report.txt
