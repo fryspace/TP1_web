@@ -10,6 +10,7 @@ pages:
     script:
         - mkdir -p public
         - cp *.html public/
+        - cp *.png public/
     artifacts:
         paths:
             - public
