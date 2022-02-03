@@ -32,7 +32,7 @@ lintcss:
         - echo $HOME
         - echo "Je suis $Username et mon mdp est $Passowrd"
         - ls ..
-        - csslint *.css > css_report.txt
+        - csslint-cli *.css > css_report.txt
     artifacts:
         paths:
             - public/css_report.txt
