@@ -46,7 +46,7 @@ badges:
         - lintcss
     script:
         - pip install anybadge
-        - ~/.local/bin/anybadge --label=bagding --value=passing --file=lint.svg passing=green failing=red
+        - ~/.local/bin/anybadge --label=test --value=passing --file=lint.svg passing=green failing=red
     artifacts:
         paths:
             - lint.svg
