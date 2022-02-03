@@ -9,6 +9,6 @@ pages:
     artifacts:
         paths:
             - public
-    stages:
+    stage:
         - test
         - deploy
