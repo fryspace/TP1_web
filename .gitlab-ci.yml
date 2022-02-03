@@ -28,7 +28,7 @@ lintcss:
     tags:
         - docker
     script:
-        - npm install csslint-cli
+        - npsqm install csslint-cli
         - npx csslint-cli *.css > css_report.txt
     artifacts:
         paths:
@@ -42,7 +42,7 @@ bagdes:
         - lintcss
     script:
         - pip install anybadge
-        - ~/.local/bin/anybadges --label=pipeline --value=passing --file=lint.svg passing=green failing=red
+        - ~/.local/bin/anybadge --label=pipeline --value=passing --file=lint.svg passing=green failing=red
     artifacts:
         paths:
             - lint.svg
