@@ -2,6 +2,7 @@
 # Full project: https://gitlab.com/pages/plain-html
 stages:
   - test
+  - badging
   - deploy
 
 pages: 
@@ -37,12 +38,13 @@ lintcss:
             - css_report.txt
 
 bagdes:
-    stage: deploy
+    stage: badging
     tags:
         - shell
     dependencies:
         - lintcss
     script:
+        - echo "Hello, $GITLAB_USER_LOGIN!"
         - pip install anybadge
         - ~/.local/bin/anybadge --label=pipeline --value=passing --file=lint.svg passing=green failing=red
     artifacts:
