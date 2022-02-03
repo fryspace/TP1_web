@@ -38,7 +38,7 @@ lintcss:
         paths:
             - css_report.txt
 
-bagdings:
+badges:
     stage: bagding
     tags:
         - shell
