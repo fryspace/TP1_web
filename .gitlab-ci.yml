@@ -45,7 +45,7 @@ lintcss:
         - shell
     script:
 #        - npm install csslint-cli # si l'outil n'existe pas
-        - npx csslint-cli *.css 
+        - npx csslint-cli *.css > css_report.txt
     artifacts:
         #on conserve son résultat pour le job badges.
         paths:
