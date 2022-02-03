@@ -24,10 +24,9 @@ htmlhint:
 
 
 lintcss:
-    image: node:12
     stage: test
     tags:
-        - docker
+        - shell
     script:
         - npm install csslint-cli
         - npx csslint-cli *.css > css_report.txt
