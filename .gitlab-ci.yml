@@ -38,6 +38,8 @@ bagdes:
     stage: test
     tags:
         - shell
+    dependencies:
+        - lintcss
     script:
         - pip install anybadge
         - ~/.local/bin/anybadge --label=pipeline --value=passing --file=lint.svg passing=green failing=red
