@@ -42,7 +42,7 @@ bagdes:
         - lintcss
     script:
         - pip install anybadge
-        - ~/.local/bin/anybadge --label=pipeline --value=passing --file=lint.svg passing=green failing=red
+        - ~/.local/bin/anybadges --label=pipeline --value=passing --file=lint.svg passing=green failing=red
     artifacts:
         paths:
             - lint.svg
