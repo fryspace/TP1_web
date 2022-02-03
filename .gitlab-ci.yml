@@ -35,7 +35,7 @@ lintcss:
             - css_report.txt
 
 bagdes:
-    stage: test
+    stage: deploy
     tags:
         - shell
     dependencies:
