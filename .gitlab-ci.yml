@@ -29,8 +29,6 @@ lintcss:
         - shell
     script:
         - git clone https://github.com/dmi3y/csslint-cli.git
-        - cd csslint-cli && grunt
-        - cd ..
         - csslint-cli/bin/csslint-cli *.css > css_report.txt
     artifacts:
         paths:
