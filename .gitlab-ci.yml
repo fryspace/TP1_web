@@ -12,8 +12,9 @@ pages:
         - mkdir -p public
         - cp *.html public/
         - cp *.png public/
-        - cp *.css public
+        - cp *.css public/
         - ls
+        - ls public
     artifacts:
         paths:
             - public
@@ -44,7 +45,6 @@ bagdes:
     dependencies:
         - lintcss
     script:
-        - echo "Hello, $GITLAB_USER_LOGIN!"
         - pip install anybadge
         - ~/.local/bin/anybadge --label=pipeline --value=passing --file=lint.svg passing=green failing=red
     artifacts:
