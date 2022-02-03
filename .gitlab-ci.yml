@@ -15,6 +15,7 @@ pages:
             - public
 
 htmlhint:
+    image: node:12
     stage: test
     script:
         - npx htmlhint *.html
