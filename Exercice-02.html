@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title> TP 1, Exo 2 </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+    <body>
+        <h1> Colloque &laquo;&nbsp;Applis web &nbsp;&raquo; du 18 au 19 octobre 2021 </h1>
+        <!-- Compléter la suite -->
+
+        <!-- Formulaire avec un ensemble de champs, une légende et une étiquette -->
+        <form method="post" id="userform">
+            <fieldset>
+                <legend>Pour vous inscrire, veuillez indiquer les informations suivantes:</legend>
+                <ul>
+                    <li>
+                        <label>Nom <input type="TEXT" name="userLastname"></label>
+                    </li>
+                    <li>
+                        <label>Prénom <input type="TEXT" name="userFirstname"></label>
+                    </li>
+                    <li>
+                        <label>Adresse de Facturation</label>
+                        <textarea id="story" name="story" rows="5" cols="33" form="userform">
+                        </textarea>
+                    </li>
+                    <li>
+                        <!<!-- Attention C'est une date à l'anglaise malgré le pattern français cela dépend du navigateur apparemment-->
+                        Date d'arrivée <input type="date" name="dateArrivee" pattern="dd/mm/yyyy" value="2021-10-18">
+                        Date de départ <input type="date" name="dateDepart" pattern="dd/mm/yyyy" value="2021-10-19">
+                    </li>
+                    <li>
+                        <label>Votre statut</label>
+                        <div>
+                            <input type="radio" value="Conferencier">Conférencier
+                            <input type="radio" value="Chercheur">Chercheur
+                            <input type="radio" value="Industriel" checked="checked">Industriel
+                        </div>    
+                    </li>
+                    <li>
+                        <label>Réservation souhaitée</label>
+                        <div>                        
+                            <input type="checkbox" value="Conferencier">Déjeuner Jour 1
+                            <input type="checkbox" value="Chercheur">Déjeuner Jour 2
+                            <input type="checkbox" value="DinerJour1">Diner Jour 1
+                            <input type="checkbox" value="DinerJour2">Diner Jour 2
+                        </div>
+                    </li>
+                </ul>
+                <input type="submit" value="S'inscrire">
+            </fieldset>
+        </form>
+    </body>
+</html>
