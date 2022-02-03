@@ -29,7 +29,7 @@ lintcss:
         - echo $USER
         - echo $HOME
         - pwd
-        - ls
+        - ls ..
         - csslint *.css > css_report.txt
     artifacts:
         paths:
