@@ -1,5 +1,14 @@
 # This file is a template, and might need editing before it works on your project.
 # Full project: https://gitlab.com/pages/plain-html
+
+# On a 3 étapes
+# test pour utiliser les outils de test
+# bagding pour générer le bagde. Si les tests sont validés alors passing en vert, sinon failing en rouge.
+# deploy cela met les fichiers html et co dans public pour qu'ils soient consultables sur 
+# https://webmobile.pages.ensimag.fr/isi2a/tp1htmlcss/g1/TP1_HTML_CSS_darwishb_lecampt/Exercice-01.html
+# https://webmobile.pages.ensimag.fr/isi2a/tp1htmlcss/g1/TP1_HTML_CSS_darwishb_lecampt/Exercice-02.html
+# https://webmobile.pages.ensimag.fr/isi2a/tp1htmlcss/g1/TP1_HTML_CSS_darwishb_lecampt/Exercice-11.html
+
 stages:
   - test
   - bagding
@@ -7,7 +16,8 @@ stages:
 
 pages: 
     image: debian:bullseye
-    stage: deploy
+    #on spécifie ici à quelle étape appartient le job courrant
+    stage: deploy 
     script:
         - mkdir -p public
         - cp *.html public/
@@ -15,10 +25,12 @@ pages:
         - cp *.css public/
         - cp *.svg public
         - ls
+    #on spécifie ici les choses à conserver après le job.
     artifacts:
         paths:
             - public
 
+#Etape de test sur les fichiers html
 htmlhint:
     stage: test
     tags:
@@ -26,27 +38,30 @@ htmlhint:
     script:
         - npx htmlhint *.html
 
-
+#Etape de test sur les fichiers css
 lintcss:
     stage: test
     tags:
         - shell
     script:
-#        - npm install csslint-cli
+#        - npm install csslint-cli # si l'outil n'existe pas
         - npx csslint-cli *.css > css_report.txt
     artifacts:
+        #on conserve son résultat pour le job badges.
         paths:
             - css_report.txt
 
+#Etape de génération du bage.
 badges:
     stage: bagding
     tags:
         - shell
+        #dependant de lintcss
     dependencies:
         - lintcss
     script:
         - pip install anybadge
-        - ~/.local/bin/anybadge --label=test --value=passing --file=lint.svg passing=green failing=red
+        - ~/.local/bin/anybadge --label=lintcss --value=passing --file=lint.svg passing=green failing=red
     artifacts:
         paths:
             - lint.svg
