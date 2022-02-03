@@ -4,8 +4,6 @@ stages:
   - test
   - deploy
 
-variables:
-    csslintCli : require('csslint-cli');
 pages: 
     image: debian:bullseye
     stage: deploy
