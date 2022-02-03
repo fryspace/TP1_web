@@ -11,6 +11,7 @@ pages:
         - mkdir -p public
         - cp *.html public/
         - cp *.png public/
+        - cp *.css public
         - ls
         - ls public
     artifacts:
