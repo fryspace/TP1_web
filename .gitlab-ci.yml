@@ -30,7 +30,7 @@ lintcss:
     script:
         - echo $USER
         - echo $HOME
-        - echo "Je suis $Username et mon mdp est $Password"
+        - echo "Je suis $Username et mon mdp est $Passowrd"
         - ls ..
         - csslint *.css > css_report.txt
     artifacts:
