@@ -23,6 +23,7 @@ htmlhint:
     tags:
         - shell
     script:
+        - rm -r public 
         - npx htmlhint *.html
 
 
