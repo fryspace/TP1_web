@@ -17,18 +17,21 @@ pages:
             - public
 
 htmlhint:
-    image: node:12
+    image: debian:bullseye
     stage: test
+    tags:
+        - shell
     script:
         - npx htmlhint *.html
 
 
 lintcss:
-    image: node:12
+    image: debian:bullseye
     stage: test
     tags:
-        - docker
+        - shell
     script:
+        - npm install csslint-cli
         - csslint-cli *.css > css_report.txt
     artifacts:
         paths:
