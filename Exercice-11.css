@@ -177,16 +177,20 @@ footer{
         height: auto;
         border-radius: 0%;
         background-color: blue;
+        position:relative;
     }
 
-    #menu:hover{
-        background-color: gray;
-    }
 
 
 
     #menu:hover > ul{
-        display: initial;
+        display: inline;
+    }
+    
+    li{
+        display: flex;
+        border-style: solid;
+        background-color: grey;
     }
 
     .contenu{
