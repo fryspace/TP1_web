@@ -5,7 +5,7 @@ stages:
   - deploy
 
 variables:
-    Username: Moi
+    csslintCli : require('csslint-cli');
 pages: 
     image: debian:bullseye
     stage: deploy
@@ -28,10 +28,7 @@ lintcss:
     tags:
         - shell
     script:
-        - echo $USER
-        - echo $HOME
-        - echo "Je suis $Username et mon mdp est $Passowrd"
-        - ls ..
+        - echo "$csslintCli"
         - csslint-cli *.css > css_report.txt
     artifacts:
         paths:
