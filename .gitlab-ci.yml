@@ -5,6 +5,7 @@ pages:
     script:
         - mkdir -p public
         - cp *.html public/
+        - npx htmlhint *.html
     artifacts:
         paths:
             - public
