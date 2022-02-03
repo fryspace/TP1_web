@@ -40,7 +40,7 @@ bagdes:
     tags:
         - docker
     script:
-        - pip install anybadge
+        - pip3 install anybadge
         - ~/.local/bin/anybadge -l pylint -v 2.22 -f lint.svg 2=red 4=orange 8=yellow 10=green
     artifacts:
         paths:
