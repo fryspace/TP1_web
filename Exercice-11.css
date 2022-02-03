@@ -87,10 +87,15 @@ main{
     border-style: solid;
     border-width: thin;
     border-radius: 10px;
+    counter-reset: compteur;
+}
+
+.contenu p::first-letter{
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .encart{
-    display: flex;
     background-color: rgb(38, 211, 38);
     border-radius: 10px;
     border-color: black;
@@ -103,9 +108,14 @@ main{
     margin-left: 2ex;
     top: 4ex;
     clear: both;
-    
 }
 
+.encart::before{
+    counter-increment: compteur;
+    content: counter(compteur) ".";
+    font-size: 2em;
+    font-weight: bold;
+}
 
 footer{
     display: flex;
