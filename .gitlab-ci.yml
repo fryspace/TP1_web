@@ -27,7 +27,7 @@ lintcss:
     image: node:12
     stage: test
     tags:
-        - shell
+        - docker
     script:
         - npm install csslint-cli
         - csslint-cli *.css > css_report.txt
