@@ -7,4 +7,4 @@ pages:
         - cp *.html public/
     artifacts:
         paths:
-            - public
+            - public/Exercice-01.html
