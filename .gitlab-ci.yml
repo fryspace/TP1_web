@@ -31,7 +31,7 @@ lintcss:
     tags:
         - shell
     script:
-        - npm install csslint-cli
+        - npm install csslint-cli -g
         - csslint-cli *.css > css_report.txt
     artifacts:
         paths:
