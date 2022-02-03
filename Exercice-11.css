@@ -54,6 +54,8 @@ main{
     
 }
 
+
+
 #menu{
     background-color: rgb(38, 211, 38);
     border-radius: 10px;
@@ -62,9 +64,8 @@ main{
     border-width: thin;
     align-self: stretch;
     min-width: 10em;
-    
-
 }
+
 
 #titre{
     background-color: rgb(38, 211, 38);
@@ -128,4 +129,69 @@ footer{
     border-color: black;
     border-style: solid;
     border-width: thin;
+}
+
+@media screen and (max-width : 900px){
+
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    header{
+        display: none;
+    }
+
+    footer{
+        display: none;
+    }
+
+    main{
+        display: flex;
+        flex-direction:  column;
+        border-radius: 0%;
+    }
+
+    #recherche {
+        display: none;
+    }
+
+    .encart{
+        display: none;
+    }
+
+    #titre{
+        border-radius: 0%;
+    }
+
+    #menu > ul{
+        display: none;
+    }
+
+    #menu::before{
+        content:"Menu";
+        font-size: large;
+        font-weight: bold;
+    }
+
+    #menu{
+        height: auto;
+        border-radius: 0%;
+        background-color: blue;
+    }
+
+    #menu:hover{
+        background-color: gray;
+    }
+
+
+
+    #menu:hover > ul{
+        display: initial;
+    }
+
+    .contenu{
+        border-radius: 0%;
+    }
+
+    
 }
