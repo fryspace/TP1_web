@@ -2,6 +2,7 @@
 # Full project: https://gitlab.com/pages/plain-html
 stages:
   - test
+  - bagding
   - deploy
 
 pages: 
@@ -37,8 +38,8 @@ lintcss:
         paths:
             - css_report.txt
 
-bagdes:
-    stage: test
+bagdings:
+    stage: bagding
     tags:
         - shell
     dependencies:
