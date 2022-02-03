@@ -28,7 +28,7 @@ lintcss:
         - shell
     script:
         - npm install csslint-cli
-        - csslint-cli *.css > css_report.txt
+        - npx csslint-cli *.css > css_report.txt
     artifacts:
         paths:
             - public/css_report.txt
