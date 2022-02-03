@@ -35,12 +35,11 @@ lintcss:
             - css_report.txt
 
 bagdes:
-    image: node:12
     stage: test
     tags:
-        - docker
+        - shell
     script:
-        - pip3 install anybadge
+        - pip install anybadge
         - ~/.local/bin/anybadge -l pylint -v 2.22 -f lint.svg 2=red 4=orange 8=yellow 10=green
     artifacts:
         paths:
