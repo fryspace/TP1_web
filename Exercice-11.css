@@ -180,9 +180,6 @@ footer{
         position:relative;
     }
 
-
-
-
     #menu:hover > ul{
         display: inline;
     }
@@ -190,6 +187,7 @@ footer{
     li{
         display: flex;
         border-style: solid;
+        border-width: thin;
         background-color: grey;
     }
 
