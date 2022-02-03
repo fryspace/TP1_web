@@ -13,6 +13,7 @@ pages:
         - cp *.html public/
         - cp *.png public/
         - cp *.css public/
+        - cp *.svg public
         - ls
         - ls public
     artifacts:
