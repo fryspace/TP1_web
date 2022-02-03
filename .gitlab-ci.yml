@@ -28,7 +28,7 @@ lintcss:
     tags:
         - docker
     script:
-        - npsqm install csslint-cli
+        - npm install csslint-cli
         - npx csslint-cli *.css > css_report.txt
     artifacts:
         paths:
