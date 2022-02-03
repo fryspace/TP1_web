@@ -18,3 +18,14 @@ htmlhint:
     stage: test
     script:
         - npx htmlhint *.html
+
+
+lintcss:
+    stage: test
+    tags:
+        - shell
+    script:
+        - csslint *.css > css_report.txt
+    artifacts:
+        paths:
+            - public/css_report.txt
