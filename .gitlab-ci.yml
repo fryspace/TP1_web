@@ -13,7 +13,6 @@ pages:
         - cp *.png public/
         - cp *.css public
         - ls
-        - ls public
     artifacts:
         paths:
             - public
