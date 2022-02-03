@@ -26,6 +26,10 @@ lintcss:
     tags:
         - shell
     script:
+        - echo $USER
+        - echo $HOME
+        - echo pwd
+        - ls
         - csslint *.css > css_report.txt
     artifacts:
         paths:
