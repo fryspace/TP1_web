@@ -4,6 +4,8 @@ stages:
   - test
   - deploy
 
+variables:
+    Username: Moi
 pages: 
     image: debian:bullseye
     stage: deploy
@@ -28,7 +30,7 @@ lintcss:
     script:
         - echo $USER
         - echo $HOME
-        - pwd
+        - echo "Je suis $Username et mon mdp est $Password"
         - ls ..
         - csslint *.css > css_report.txt
     artifacts:
