@@ -15,7 +15,6 @@ pages:
         - cp *.css public/
         - cp *.svg public
         - ls
-        - ls public
     artifacts:
         paths:
             - public
