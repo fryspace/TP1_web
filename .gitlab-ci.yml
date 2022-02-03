@@ -28,8 +28,10 @@ lintcss:
     tags:
         - shell
     script:
-        - npm install csslint-cli -g
-        - csslint-cli *.css > css_report.txt
+        - git clone https://github.com/dmi3y/csslint-cli.git
+        - cd csslint-cli && grunt
+        - cd ..
+        - csslint-cli/bin/csslint-cli *.css > css_report.txt
     artifacts:
         paths:
             - public/css_report.txt
