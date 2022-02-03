@@ -44,7 +44,7 @@ bagdes:
     dependencies:
         - lintcss
     script:
-        - cat css_report.txt
+        - rm css_report.txt
         - echo "Hello, $GITLAB_USER_LOGIN!"
         - pip install anybadge
         - ~/.local/bin/anybadge --label=pipeline --value=passing --file=lint.svg passing=green failing=red
