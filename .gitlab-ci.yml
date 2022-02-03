@@ -31,7 +31,21 @@ lintcss:
     tags:
         - shell
     script:
+#        - npm install csslint-cli
         - npx csslint-cli *.css > css_report.txt
     artifacts:
         paths:
             - css_report.txt
+
+bagdes:
+    stage: test
+    tags:
+        - shell
+    dependencies:
+        - lintcss
+    script:
+        - pip install anybadge
+        - ~/.local/bin/anybadge --label=pipeline --value=passing --file=lint.svg passing=green failing=red
+    artifacts:
+        paths:
+            - lint.svg
