@@ -61,8 +61,7 @@ badges:
         - lintcss
     script:
         - pip install anybadge
-        - if grep -q ERR css_report.txt ; then VALEUR="passing"  ; else VALEUR="failing" ;fi 
-        - ~/.local/bin/anybadge --label=lintcss --value="$VALEUR" --file=lint.svg passing=green failing=red
+        - ~/.local/bin/anybadge --label=lintcss --value=passing --file=lint.svg passing=green failing=red
     artifacts:
         paths:
             - lint.svg
