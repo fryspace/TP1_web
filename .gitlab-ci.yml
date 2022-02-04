@@ -46,6 +46,8 @@ lintcss:
     script:
 #        - npm install csslint-cli # si l'outil n'existe pas
         - npx csslint-cli *.css > css_report.txt
+        - if grep -q ERR css_report.txt ; then VALEUR="failing" exit 1  ; else VALEUR="passing" ;fi 
+
     artifacts:
         #on conserve son résultat pour le job badges.
         paths:
@@ -61,7 +63,6 @@ badges:
         - lintcss
     script:
         - pip install anybadge
-        - if grep -q ERR css_report.txt ; then VALEUR="failing" exit 1  ; else VALEUR="passing" ;fi 
         - ~/.local/bin/anybadge --label=lintcss --value=passing --file=lint.svg passing=green failing=red
     artifacts:
         paths:
